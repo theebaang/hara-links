@@ -1,0 +1,14 @@
+{
+  "applinks": {
+    "details": [
+      {
+        "appIDs": ["CLPFMG5Q35.com.harafitness.app"],
+        "components": [
+          { "/": "/p/*", "comment": "A program" },
+          { "/": "/c/*", "comment": "A coach" },
+          { "/": "/w/*", "comment": "A workout (Bits)" }
+        ]
+      }
+    ]
+  }
+}

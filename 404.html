@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Hara Fitness</title>
+<meta name="description" content="Programs, coaches and workouts on Hara Fitness, the social fitness app for iPhone.">
+<meta property="og:title" content="Hara Fitness">
+<meta property="og:description" content="Open this in the Hara Fitness app on iPhone.">
+<meta property="og:image" content="https://go.harafitness.com/hara-mark.png">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/hara-mark.png">
+<style>
+  :root { color-scheme: light dark; --text: #1d1d1f; --muted: #6e6e73; --accent: #fe2c54; --bg: #ffffff; --card: #f5f5f7; }
+  @media (prefers-color-scheme: dark) { :root { --text: #f5f5f7; --muted: #a1a1a6; --accent: #ff4468; --bg: #000000; --card: #1c1c1e; } }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body { margin: 0; background: var(--bg); color: var(--text);
+         font: 17px/1.5 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Helvetica Neue", Arial, sans-serif;
+         display: flex; align-items: center; justify-content: center; text-align: center; }
+  main { width: 100%; max-width: 420px; padding: 48px 16px; }
+  img { width: 96px; height: auto; }
+  h1 { font-size: 30px; line-height: 1.15; margin: 24px 0 8px; letter-spacing: -0.02em; }
+  p { margin: 0 0 12px; color: var(--muted); }
+  .button { display: block; margin: 28px 0 12px; padding: 15px 20px; border-radius: 999px; background: var(--accent);
+            color: #fff; font-weight: 600; text-decoration: none; }
+  .soon { background: var(--card); border-radius: 18px; padding: 16px; margin-top: 20px; font-size: 15px; }
+  a { color: var(--accent); }
+  footer { margin-top: 40px; font-size: 13px; color: var(--muted); }
+  footer a { color: var(--muted); }
+</style>
+</head>
+<body>
+<main>
+  <img src="/hara-mark.png" alt="Hara">
+  <h1 id="title">Open in Hara Fitness</h1>
+  <p id="subtitle">This link opens in the Hara Fitness app on iPhone.</p>
+  <a class="button" id="open" href="https://harafitness.com">Open in Hara</a>
+  <div class="soon">Don't have Hara yet? It's coming soon to the App Store.<br>
+    <a href="https://harafitness.com">Learn more at harafitness.com</a></div>
+  <footer>© 2026 Hara Technologies Sdn. Bhd. · <a href="/privacy">Privacy</a> · <a href="/terms">Terms</a></footer>
+</main>
+<script>
+  // /p/<id>, /c/<id> or /w/<id>: name what's being opened, and open it in the app.
+  var match = location.pathname.match(/^\/(p|c|w)\/([A-Za-z0-9_-]{1,64})\/?$/);
+  if (match) {
+    var kind = { p: "program", c: "coach", w: "workout" }[match[1]];
+    document.getElementById("title").textContent = "Open this " + kind + " in Hara";
+    document.getElementById("open").href = "harafitness://" + match[1] + "/" + match[2];
+  }
+</script>
+</body>
+</html>
